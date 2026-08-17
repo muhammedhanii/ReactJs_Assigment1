@@ -1,0 +1,219 @@
+/* CSS Module — class names are scoped to the components that import it. */
+
+.form {
+  display: grid;
+  gap: 18px;
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: 12px;
+  padding: 26px 24px 28px;
+  margin-bottom: 48px;
+}
+
+.formAlert {
+  background: rgba(255, 122, 122, 0.1);
+  border: 1px solid rgba(255, 122, 122, 0.35);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 13px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.control {
+  background: #141926;
+  border: 1px solid var(--ink-line);
+  border-radius: 7px;
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 13px;
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.control::placeholder {
+  color: #5d6478;
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(242, 183, 54, 0.15);
+}
+
+.controlInvalid {
+  border-color: rgba(255, 122, 122, 0.6);
+}
+
+.controlInvalid:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255, 122, 122, 0.15);
+}
+
+select.control {
+  cursor: pointer;
+}
+
+textarea.control {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.hint {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.error {
+  font-size: 12.5px;
+  color: var(--danger);
+  margin: 6px 0 0;
+}
+
+/* ---------- checkbox ---------- */
+
+.checkboxField {
+  padding-top: 4px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+  accent-color: var(--amber);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ---------- actions ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px solid var(--ink-line);
+  margin-top: 4px;
+  padding-top: 20px;
+}
+
+/* ---------- success panel ---------- */
+
+.success {
+  background: var(--ink-raised);
+  border: 1px solid rgba(91, 201, 141, 0.4);
+  border-radius: 12px;
+  padding: 30px 26px;
+  margin: 20px 0 48px;
+}
+
+.successBadge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ok);
+  background: rgba(91, 201, 141, 0.12);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 0 16px;
+}
+
+.successTitle {
+  font-family: var(--display);
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.successText {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 10px 0 0;
+}
+
+.summary {
+  margin: 24px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--ink-line);
+  display: grid;
+  gap: 12px;
+}
+
+.summaryRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.summaryRow dt {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex: 0 0 120px;
+}
+
+.summaryRow dd {
+  margin: 0;
+  font-size: 14.5px;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.successActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 20px 16px 24px;
+  }
+
+  .summaryRow dt {
+    flex: 0 0 100%;
+  }
+}
